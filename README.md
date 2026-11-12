@@ -10,9 +10,9 @@ Pinbench 是一个开源的嵌入式硬件学习工作台。打开浏览器，�
 
 [打开在线工坊](https://pinbench-3d-workshop.vercel.app) · [查看开发板清单](#14-块开发板) · [查看接线实验](#8-个引导实验) · [MIT 许可证](LICENSE)
 
-[![Pinbench 3D 展台中的树莓派 4B 爆炸图，接口、芯片和排针分层悬浮在电路板上方](docs/images/pinbench-showcase.webp)](https://pinbench-3d-workshop.vercel.app)
+[![Pinbench 3D 展台中的 Arduino Uno R3，底栏并排显示器材筛选、开发板缩略图和演示工具](docs/images/pinbench-showcase.webp)](https://pinbench-3d-workshop.vercel.app)
 
-*树莓派 4B 的爆炸图。虚线标出了零件在电路板上的安装位置。*
+*新版 3D 展台。可以查看开发板尺寸，旋转模型，也可以从底栏打开引脚图、爆炸图或动手组装。*
 
 ## 适合谁使用
 
@@ -45,11 +45,13 @@ Pinbench 是一个开源的嵌入式硬件学习工作台。打开浏览器，�
 - **试试自由搭建。** 自选开发板和外设，拖动器件、调整布局，再连接电源、地线与信号线。例如用按钮控制 LED，或用电位器控制舵机角度。工作台按已有的器件演示规则响应接线。
 - **把接线与代码对上。** 每个任务提供可复制的 Arduino C++ 或 MicroPython 示例。自由搭建可根据引脚连接生成基础 I/O 代码模板；运行时可在「串口」页查看模拟输出。
 
-![Arduino Uno 连接电位器和 LED 模块，导线上的光点显示旋钮调光任务中的信号活动](docs/images/pinbench-circuit.webp)
+![Arduino Uno R3 通过两根杜邦线连接红色 LED 模块，右侧接线清单显示两根线已接好并正在运行](docs/images/pinbench-circuit.webp)
 
-*旋钮调光实验：调整电位器，观察 LED 亮度和串口读数。*
+*「让 LED 闪起来」实验。工具栏显示接线进度，右侧可以查看每根线的两端并定位引脚。*
 
 ### 4. 学习、测验和选板
+
+![新版课程页面，左侧按系列选择开发板，右侧显示 Arduino Uno R3 的参数、学习要点和注意事项](docs/images/pinbench-lesson.webp)
 
 「课程」为每块板整理了主控、接口、电平、使用注意事项和适用场景。「对比」可以任选三块板并排看主频、存储、GPIO、ADC、无线和 USB 等参数。「测验」有 10 道带答案解析的题目，帮助检查对芯片、引脚、电平和接口的理解。
 
@@ -101,7 +103,7 @@ Pinbench 是一个开源的嵌入式硬件学习工作台。打开浏览器，�
 | **超声波测距** | Uno R3 + HC-SR04 + 蜂鸣器 | 改变虚拟障碍物距离，理解 TRIG / ECHO，并观察近距离报警 |
 | **温湿度显示到 OLED** | ESP32 DevKit V1 + DHT11 + OLED | 调整温度和湿度，观察 OLED 及串口输出，认识 I²C 的 SDA / SCL |
 | **光控小夜灯** | Pico + 光敏模块 + LED | 调低环境亮度，看 LED 何时亮起，理解 ADC 读数与阈值判断 |
-| **驱动小车轮子** | Uno R3 + L298N + TT 电机 + 电池盒 | 区分控制信号和电机供电，理解共地，观察电机正转、停转和反转 |
+| **驱动小车轮子** | Uno R3 + L298N + TT 电机 + 电池盒 | 移除 5V-EN 跳线帽，电池盒给电机供电，Uno 的 5 V 给驱动板逻辑供电。连接共地后观察电机正转、停转和反转 |
 
 **第一次打开时：** 在展台选 Uno R3，打开爆炸图认一认芯片和排针；然后进入「工作台」选择「让 LED 闪起来」，接好 D13 → SIG、GND → GND，点「运行」。接着做「旋钮调光」，把输入、输出和代码连起来理解。
 
@@ -117,7 +119,7 @@ Pinbench 的 3D 模型用于认识结构和练习装配。点击「运行」会�
 python3 -m http.server 8080
 ```
 
-然后访问 `http://localhost:8080`。页面通过 jsDelivr 加载固定版本的 Three.js。静态站点无需构建；部署到 Vercel 时使用仓库根目录，Framework Preset 选择 Other。
+然后访问 `http://localhost:8080`。Three.js r160 已内联到 HTML，双击打开时也可以离线使用。静态站点无需构建。部署到 Vercel 时使用仓库根目录，Framework Preset 选择 Other。
 
 ## 开源许可
 
