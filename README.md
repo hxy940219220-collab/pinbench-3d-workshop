@@ -1,6 +1,10 @@
 # Pinbench · 开发板 3D 工坊
 
-一个基于 Three.js 的嵌入式硬件交互演示工作台。应用代码、模型、样式与数据保存在单文件 `index.html` 中。
+一个基于 Three.js 的开源嵌入式硬件交互演示工作台。应用代码、模型、样式与数据保存在单文件 `index.html` 中。
+
+创建人：**Huang Xiyuan** · **且曼学院**
+
+[在线体验](https://pinbench-3d-workshop.vercel.app) · [GitHub 源码](https://github.com/hxy940219220-collab/pinbench-3d-workshop)
 
 - 14 块开发板、56 个外设模块。
 - 3D 展台、分层爆炸图、组装与焊接动画。
@@ -22,3 +26,7 @@ python3 -m http.server 8080
 这是无需构建的静态站点。Vercel 使用仓库根目录，Framework Preset 选择 Other。
 
 导线脉冲反映页面仿真状态，并为教学展示进行了时间放大。
+
+## 开源许可
+
+本项目采用 [MIT 许可证](LICENSE) 开源。Copyright (c) 2026 Huang Xiyuan。
